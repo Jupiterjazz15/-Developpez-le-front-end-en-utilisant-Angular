@@ -38,4 +38,20 @@ export class OlympicService {
   getOlympics() {
     return this.olympics$.asObservable();
   }
+
+  countOlympics(): number {
+    const olympics = this.olympics$.getValue();
+    // constante pour stocker la valeur actuelle de l'Observable olympics avec utilisation de getValue() qui est une méthode de la classe de la classe BehaviorSubject
+    return olympics ? olympics.length : 0;
+    // opérateur ternaire : si olympics n'est pas null, on retourne la longueur du tableau, sinon on retourne 0
+  }
+  countParticipations(): number {
+    const olympics = this.olympics$.getValue();
+
+    if (olympics && olympics.length > 0) {
+        return olympics[0].participations ? olympics[0].participations.length : 0;
+    }
+    return 0;
+}
+
 }
