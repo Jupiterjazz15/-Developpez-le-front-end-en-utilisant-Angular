@@ -1,7 +1,8 @@
 <h2>Medals per Counrtry</h2>
 
-<p>Number of Counrties : {{ olympicsCount }}</p>
-
-<p>Number of JOs : {{ participationsCount }}</p>
+<div class="global-informations">
+  <p class="global-informations-card">Number of JOs <br><strong>{{ participationsCount }}</strong></p>
+  <p class="global-informations-card">Number of countries <br><strong>{{ olympicsCount }}</strong></p>
+</div>
 
 <app-pie-chart/>
