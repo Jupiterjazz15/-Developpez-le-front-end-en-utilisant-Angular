@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { Color, ScaleType} from '@swimlane/ngx-charts';
+import { Router } from '@angular/router';
+// j'importe le router nécessaire à la redirection
 
 @Component({
   selector: 'app-pie-chart',
@@ -18,7 +20,6 @@ export class PieChartComponent implements OnInit {
 
   // Options du chart pie
   view: [number, number] = [700, 400];
-  showLegend = true;
   showLabels = true;
   isDoughnut = false;
 
@@ -30,7 +31,10 @@ export class PieChartComponent implements OnInit {
     domain: ['#823952', '#9e5d64', '#83A2E0', '#9c7fa3', '#b6e1f3']
   };
 
-  constructor(private olympicService: OlympicService) {}
+  activeData: any;
+
+  constructor(private olympicService: OlympicService, private router: Router) {}
+  // dans le constructeur, j'injecte le service OlympicService et le router
 
   ngOnInit(): void {
     // Récupération des données depuis le service OlympicService
@@ -44,8 +48,15 @@ export class PieChartComponent implements OnInit {
     });
   }
 
+  formatLabel(value: any): string {
+    return value;
+    // Je n'arrive pas à ajouter un espace entre la fin du trait et le label
+  }
+
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+    console.log('Navigating to:', data.name);
+    this.router.navigate([data.name]);
   }
 
   onActivate(data: any): void {

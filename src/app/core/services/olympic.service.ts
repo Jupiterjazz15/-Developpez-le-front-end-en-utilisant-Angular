@@ -39,6 +39,21 @@ export class OlympicService {
     return this.olympics$.asObservable();
   }
 
+  getOlympicByName(name: string): Olympic | undefined {
+    const olympics = this.olympics$.getValue(); // Obtenez la valeur actuelle
+
+    if (!olympics) {
+      throw new Error('No olympics data available!');
+    }
+
+    const foundOlympic = olympics.find(olympic => olympic.country === name);
+
+    if (!foundOlympic) {
+      throw new Error('Olympic not found!');
+    }
+    return foundOlympic;
+  }
+
   countOlympics(): number {
     const olympics = this.olympics$.getValue();
     // constante pour stocker la valeur actuelle de l'Observable olympics avec utilisation de getValue() qui est une méthode de la classe de la classe BehaviorSubject
