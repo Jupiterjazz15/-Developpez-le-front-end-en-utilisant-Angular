@@ -2,11 +2,19 @@
   [view]="view"
   [scheme]="colorScheme"
   [results]="pieData"
-  [labels]="showLabels"
   [doughnut]="isDoughnut"
+  [labels]="true"
   (select)="onSelect($event)"
   (activate)="onActivate($event)"
   (deactivate)="onDeactivate($event)">
+
+  <ng-template #tooltipTemplate let-model="model">
+    <div class="dashboard__graph_label">
+      <p>{{model.name}}</p>
+      <p>🏅 {{model.value}}</p>
+    </div>
+  </ng-template>
+
 </ngx-charts-pie-chart>
 
 <!-- Pour l'attribut [scheme] j'ai du fournir un objet de type de données Color. L'objet Color à lui-même une clé dont la vlauer valeur est de type de données  ScaleType -->

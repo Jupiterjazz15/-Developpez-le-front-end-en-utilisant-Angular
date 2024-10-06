@@ -48,11 +48,6 @@ export class PieChartComponent implements OnInit {
     });
   }
 
-  formatLabel(value: any): string {
-    return value;
-    // Je n'arrive pas à ajouter un espace entre la fin du trait et le label
-  }
-
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
     console.log('Navigating to:', data.name);
