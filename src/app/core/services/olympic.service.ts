@@ -28,7 +28,7 @@ export class OlympicService {
   // à l'aide d'un constructeur, j'injecte le service d'Angular nommé HttpClient (utilisé pr faire des requêtes HTTP)
 
   loadInitialData() {
-  // méthode pour récupérer les données du fichier JSON
+  // méthode pour récupérer les données du fichier JSON et returner un Observable
     return this.http.get<Olympic[]>(this.olympicUrl).pipe(
       // this.http.get = utilisation du service http avec une requête GET.
       // <Olympic[]> = je demande à ce que ma réponse soit sous la forme d'un tableau d'instances d'Olympic.
@@ -58,7 +58,7 @@ export class OlympicService {
   }
 
   getOlympics() {
-  // méthode pr obtenir un Observable avec toutes les données des JO
+  // méthode pr convertir un BehaviorSubject en un Observable disponible en lecture seule pr que les composants puissent s'y abonner SANS modifier les données.
     return this.olympics$.asObservable();
     // méthd de la classe BehaviorSubject pr obtenir un Observable à partir d'un BehaviorSubject
   }
@@ -77,6 +77,7 @@ export class OlympicService {
     if (!foundOlympic) {
       throw new Error('Olympic not found!');
     }
+
     return foundOlympic;
   }
 
@@ -97,8 +98,16 @@ export class OlympicService {
     return 0;
   }
 
+  getTotalMedals(olympic: Olympic): number {
+    return olympic.participations.reduce((sum, participation) => sum + participation.medalsCount, 0);
+  }
+
+  getTotalAthletes(olympic: Olympic): number {
+    return olympic.participations.reduce((sum, participation) => sum + participation.athleteCount, 0);
+  }
+
   private getOlympicsValue(): Olympic[] {
-  //je fais une mthd prive pour obtenir les données des JO car j'en ai besoin dans bcp de mes mthds
+  //je fais une mthd privée qui récupère la valeur actuelle stockée dans le BehaviorSubject sans avoir besoin de s'abonner à l'Observable
     const olympics = this.olympics$.getValue();
     if (!olympics) {
       throw new Error('No olympics data available!');

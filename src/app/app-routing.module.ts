@@ -10,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: ':name',
+    path: ':country',
     component: DetailComponent,
   },
   {
