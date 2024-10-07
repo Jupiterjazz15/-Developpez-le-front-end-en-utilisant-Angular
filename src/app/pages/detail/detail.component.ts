@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
+import { LineChartComponent } from 'src/app/line-chart/line-chart.component';
 
 
 @Component({
   selector: 'app-detail',
-  standalone: true,
-  imports: [],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.scss'
+  styleUrl: './detail.component.scss',
+  imports: [LineChartComponent],
+  standalone: true,
 })
 
 export class DetailComponent implements OnInit {
@@ -25,7 +25,6 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.countryName = this.route.snapshot.paramMap.get('country');
-    console.log(this.countryName);
 
     // Charger les données d'abord
     this.olympicService.loadInitialData().subscribe(() => {
@@ -45,4 +44,3 @@ export class DetailComponent implements OnInit {
     });
   }
 }
-

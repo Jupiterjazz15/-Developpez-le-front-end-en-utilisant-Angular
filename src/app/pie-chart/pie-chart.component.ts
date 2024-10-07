@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-pie-chart',
   standalone: true,
-  imports: [NgxChartsModule], // Import de NgxChartsModule ici
+  imports: [NgxChartsModule],
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss']
 })
