@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class PieChartComponent implements OnInit {
 
   // Données pour le chart pie
-  public pieData: any[] = [];
+  public pieData: { name: string; value: number }[] = [];
 
   // Options du chart pie
   view: [number, number] = [700, 400];

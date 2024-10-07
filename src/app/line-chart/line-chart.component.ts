@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OlympicService } from 'src/app/core/services/olympic.service';
+import { SeriesData } from 'src/app/core/models/SeriesData';
 
 @Component({
   selector: 'app-line-chart',
@@ -13,7 +14,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 
 export class LineChartComponent implements OnInit {
 
-  public lineChartData: any[] = [];
+  public lineChartData: { name: string; series: SeriesData[] }[] = [];
 
   animations: boolean = true;
   xAxis: boolean = true;
@@ -39,7 +40,7 @@ export class LineChartComponent implements OnInit {
           // Transformation des données pour le graphique
           this.lineChartData = [
             {
-              name: this.countryName,
+              name:  this.countryName ?? 'Unknown Country',
               series: olympicData.participations.map(participation => ({
                 name: participation.year.toString(),
                 value: participation.medalsCount
