@@ -3,13 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { LineChartComponent } from 'src/app/line-chart/line-chart.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
-  imports: [LineChartComponent],
+  imports: [LineChartComponent,RouterLink],
   standalone: true,
 })
 

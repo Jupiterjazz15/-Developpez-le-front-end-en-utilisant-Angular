@@ -4,6 +4,7 @@ import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { PieChartComponent } from 'src/app/pie-chart/pie-chart.component';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +14,7 @@ import { PieChartComponent } from 'src/app/pie-chart/pie-chart.component';
 })
 
 export class HomeComponent implements OnInit {
-  
+
   public olympics$: Observable<Olympic[] | null> = of([]);
   public olympicsCount: number = 0;
   // propriété qui stocke le nombre d'Olympic
