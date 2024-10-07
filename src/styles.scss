@@ -4,3 +4,15 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.global-informations {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}

@@ -1,11 +1,14 @@
-<a routerLink="">Retour</a>
+<div class="container grid-container">
 
-<h2>{{ olympic?.country }}</h2>
+  <a routerLink="">Retour</a>
+  <h2>{{ olympic?.country }}</h2>
 
-<div class="global-informations">
-  <p class="global-informations-card">Number of entries <br><strong>{{ numberOfParticipations }}</strong></p>
-  <p class="global-informations-card">Number of  medals <br><strong>{{ totalMedals }}</strong></p>
-  <p class="global-informations-card">Number of  athletes <br><strong>{{ totalAthletes }}</strong></p>
+  <div class="global-informations">
+    <p class="global-informations-card">Number of entries <br><strong>{{ numberOfParticipations }}</strong></p>
+    <p class="global-informations-card">Number of  medals <br><strong>{{ totalMedals }}</strong></p>
+    <p class="global-informations-card">Number of  athletes <br><strong>{{ totalAthletes }}</strong></p>
+  </div>
+
+  <app-line-chart />
+
 </div>
-
-<app-line-chart></app-line-chart>

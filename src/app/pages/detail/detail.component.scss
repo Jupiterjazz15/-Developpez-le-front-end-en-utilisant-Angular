@@ -28,3 +28,31 @@ h2 {
   border: 2.3px solid #008b8b;
   text-align: center;
 }
+
+// Media Queries pour gérer le responsivité
+
+@media (max-width: 768px) {
+  .global-informations {
+    flex-direction: column;
+    align-items: center;
+
+    .global-informations-card {
+      width: 80%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .global-informations {
+    flex-direction: column;
+    align-items: center;
+
+    .global-informations-card {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+}

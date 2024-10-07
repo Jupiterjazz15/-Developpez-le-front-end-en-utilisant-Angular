@@ -14,7 +14,6 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class LineChartComponent implements OnInit {
 
   public lineChartData: any[] = [];
-  public view: [number, number] = [700, 300];
 
   animations: boolean = true;
   xAxis: boolean = true;
