@@ -28,10 +28,8 @@ export class LineChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.countryName = this.route.snapshot.paramMap.get('country');
-    console.log('Country name:', this.countryName);
 
     if (this.countryName) {
-      console.log('Loading data for country:', this.countryName);
       // Charger les données d'abord
       this.olympicService.loadInitialData().subscribe(() => {
         const olympicData = this.olympicService.getOlympicByName(this.countryName!);
