@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { Color, ScaleType} from '@swimlane/ngx-charts';
+import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { ChartData } from 'src/app/core/models/ChartData';
 
 @Component({
   selector: 'app-pie-chart',
@@ -14,12 +15,12 @@ import { Color, ScaleType} from '@swimlane/ngx-charts';
 
 export class PieChartComponent implements OnInit {
 
-  public pieData: { name: string; value: number }[] = [];
+  public pieData: ChartData[] = [];
 
   view: [number, number] = [700, 400];
   showLabels = true;
   isDoughnut = false;
-  activeData: any;
+  activeData: ChartData | null = null;
   colorScheme: Color = {
     name: 'customScheme',
     selectable: true,
@@ -40,7 +41,8 @@ export class PieChartComponent implements OnInit {
     });
   }
 
-  onSelect(data: any): void {
+  onSelect(data: ChartData): void {
+    this.activeData = data;
     this.router.navigate(['/details', data.name]);
   }
 }

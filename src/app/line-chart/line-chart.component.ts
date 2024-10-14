@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OlympicService } from 'src/app/core/services/olympic.service';
-import { SeriesData } from 'src/app/core/models/SeriesData';
+import { ChartData } from 'src/app/core/models/ChartData';
 
 @Component({
   selector: 'app-line-chart',
@@ -14,7 +14,7 @@ import { SeriesData } from 'src/app/core/models/SeriesData';
 
 export class LineChartComponent implements OnInit {
 
-  public lineChartData: { name: string; series: SeriesData[] }[] = [];
+  public lineChartData: { name: string; series: ChartData[] }[] = [];
 
   animations: boolean = true;
   xAxis: boolean = true;
