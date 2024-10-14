@@ -27,13 +27,10 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.countryName = this.route.snapshot.paramMap.get('country');
-    console.log('Country parameter:', this.countryName);
 
     this.olympicService.loadInitialData().subscribe(() => {
-      console.log('Data loaded');
       if (this.countryName) {
         const olympicData = this.olympicService.getOlympicByName(this.countryName);
-        console.log('Olympic data:', olympicData);
 
         if (olympicData) {
           this.olympic = olympicData;

@@ -4,9 +4,7 @@
   [results]="pieData"
   [doughnut]="isDoughnut"
   [labels]="true"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)">
+  (select)="onSelect($event)">
 
   <ng-template #tooltipTemplate let-model="model">
     <div class="dashboard__graph_label">
