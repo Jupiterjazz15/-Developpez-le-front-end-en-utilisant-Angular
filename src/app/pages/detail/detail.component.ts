@@ -29,10 +29,8 @@ export class DetailComponent implements OnInit {
     this.countryName = this.route.snapshot.paramMap.get('country');
     console.log('Country parameter:', this.countryName);
 
-    // Charger les données d'abord
     this.olympicService.loadInitialData().subscribe(() => {
       console.log('Data loaded');
-      // Ensuite, essayer de récupérer les données spécifiques du pays
       if (this.countryName) {
         const olympicData = this.olympicService.getOlympicByName(this.countryName);
         console.log('Olympic data:', olympicData);

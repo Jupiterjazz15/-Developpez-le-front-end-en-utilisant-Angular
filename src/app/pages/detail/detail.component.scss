@@ -29,8 +29,6 @@ h2 {
   text-align: center;
 }
 
-// Media Queries pour gérer le responsivité
-
 @media (max-width: 768px) {
   .global-informations {
     flex-direction: column;
@@ -42,7 +40,6 @@ h2 {
     }
   }
 }
-
 
 @media (max-width: 480px) {
   .global-informations {

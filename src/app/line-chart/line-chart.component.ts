@@ -30,12 +30,10 @@ export class LineChartComponent implements OnInit {
     this.countryName = this.route.snapshot.paramMap.get('country');
 
     if (this.countryName) {
-      // Charger les données d'abord
       this.olympicService.loadInitialData().subscribe(() => {
         const olympicData = this.olympicService.getOlympicByName(this.countryName!);
 
         if (olympicData) {
-          // Transformation des données pour le graphique
           this.lineChartData = [
             {
               name:  this.countryName ?? 'Unknown Country',

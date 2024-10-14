@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.olympicService.loadInitialData().pipe(take(1)).subscribe();
-    // appel de la méthode loadInitialData() du service OlympicService pour charger les données
-    // pipe(take(1)) => untilisation de l'opérateur pipe de RxJS pr transformer un Observable en un nouvel Observable
+    // pipe(take(1)) => utilisation de l'opérateur pipe de RxJS pr transformer un Observable en un nouvel Observable
     // ici on utilise l'opérateur take(1) pour n'exécuter la requête qu'une seule fois
     // subscribe() => méthode qui démarre l'écoute de l'Observable. Dont on n'écoutera que la première valeur émise
   }
