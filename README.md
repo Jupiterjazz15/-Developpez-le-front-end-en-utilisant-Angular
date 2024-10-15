@@ -1,29 +1,45 @@
-# OlympicGamesStarter
+# Developpez le front end en utilisant Angular : a Single Page Application on the Olympic Games
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+This application allows users to explore key information about the Olympic Games, including medals and the number of athletes per country. The data is visualized using interactive and colorful charts.
 
-Don't forget to install your node_modules before starting (`npm install`).
+## Features
+- Interactive chart displaying the total number of medals per country.
+- Interactive chart displaying the detailed number of medals for each country on 2012, 2016, 2020
 
-## Development server
+## Technologies
+- Typescript
+- SCSS
+- HTML
+- Angular : 18.2.7
+- Node.js : 20.17.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Library
+- Ngx-chart - 20.5.0
 
-## Build
+## Pre-requisites
+Ensure that you have Node.js and npm installed on your machine, as they are required to install the project dependencies.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How to start
 
-## Where to start
+Clone the repository
 
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
+  git clone git@github.com:Jupiterjazz15/Developpez-le-front-end-en-utilisant-Angular.git
+  cd Developpez-le-front-end-en-utilisant-Angular
 
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
+Install the dependencies
 
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
+  npm install
 
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
+Install the Ngx-charts library
 
-You're now ready to implement the requested features.
+npm install @swimlane/ngx-charts --save
 
-Good luck!
+Run the app
+
+  ng serve
+
+Have a look at the app on http://localhost:4200
+
+## Author
+
+Coralie Haller
