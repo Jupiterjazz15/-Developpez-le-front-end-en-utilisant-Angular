@@ -17,7 +17,7 @@ export class PieChartComponent implements OnInit {
 
   public pieData: ChartData[] = [];
 
-  view: [number, number] = [700, 400];
+  view: [number, number] = [430, 400];
   showLabels = true;
   isDoughnut = false;
   activeData: ChartData | null = null;
