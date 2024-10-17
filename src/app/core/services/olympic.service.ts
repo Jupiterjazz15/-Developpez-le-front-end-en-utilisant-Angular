@@ -17,7 +17,7 @@ export class OlympicService {
   constructor(private http: HttpClient) {}
 
   loadInitialData() {
-  // mthd pour récupérer les données du fichier JSON et retourner un Observable
+  // Méthode pour récupérer les données du fichier JSON et retourner un Observable
     return this.http.get<Olympic[]>(this.olympicUrl).pipe(
       tap((value) => {
         this.olympics = value;
@@ -28,18 +28,16 @@ export class OlympicService {
         this.olympics$.next(null);
         return caught;
       })
-
     );
   }
 
   getOlympics() {
-  // mthd pr convertir le BehaviorSubject en un Observable disponible en lecture seule.
-  // cela permet aux composants de s'y abonner SANS modifier les données.
+  // Méthode pour convertir le BehaviorSubject en un Observable disponible en lecture seule.
+  // Cela permet aux composants de s'y abonner SANS modifier les données.
     return this.olympics$.asObservable();
   }
 
   getOlympicByName(name: string): Olympic | undefined {
-  // mthd pour récupérer une instance d'Olympic via le nom du pays
     const olympics = this.getOlympicsValue();
 
     if (!olympics) {

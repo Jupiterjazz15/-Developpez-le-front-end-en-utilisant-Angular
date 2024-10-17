@@ -22,7 +22,7 @@ export class LineChartComponent implements OnInit {
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Date';
 
-  private countryName: string | null = null;
+  public countryName: string | null = null;
 
   constructor(private olympicService: OlympicService, private route: ActivatedRoute) {}
 

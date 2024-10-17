@@ -3,3 +3,4 @@ export interface ChartData {
   value: number;
 }
 
+// Interface utilisée pour les données des graphiques

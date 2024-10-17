@@ -15,7 +15,7 @@ import { ChartData } from 'src/app/core/models/ChartData';
 
 export class PieChartComponent implements OnInit {
 
-  public pieData: ChartData[] = [];
+  public pieChartData: ChartData[] = [];
 
   view: [number, number] = [430, 400];
   showLabels = true;
@@ -33,9 +33,9 @@ export class PieChartComponent implements OnInit {
   ngOnInit(): void {
     this.olympicService.getOlympics().subscribe((olympics) => {
       if (olympics) {
-        this.pieData = olympics.map(olympic => ({
+        this.pieChartData = olympics.map(olympic => ({
           name: olympic.country,
-          value: olympic.participations.reduce((total, participation) => total + participation.medalsCount, 0)
+          value: olympic.participations.reduce((sum, participation) => sum + participation.medalsCount, 0)
         }));
       }
     });
