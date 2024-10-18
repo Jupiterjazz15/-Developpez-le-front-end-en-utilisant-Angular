@@ -16,3 +16,29 @@ body {
   justify-content: space-around;
   margin-bottom: 40px;
 }
+
+@media (max-width: 768px) {
+  .global-informations {
+    flex-direction: column;
+    align-items: center;
+
+    .global-informations-card {
+      width: 80%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .global-informations {
+    flex-direction: column;
+    align-items: center;
+
+    .global-informations-card {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+}
+

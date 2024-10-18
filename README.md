@@ -14,6 +14,7 @@ This application allows users to explore key information about the Olympic Games
 - Node.js : 20.17.0
 
 ## Library
+- RxJS - 7.8.1
 - Ngx-chart - 20.5.0
 
 ## Pre-requisites
