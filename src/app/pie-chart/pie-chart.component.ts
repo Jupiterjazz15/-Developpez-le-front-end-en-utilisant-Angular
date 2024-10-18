@@ -14,14 +14,17 @@ import { ChartData } from 'src/app/core/models/ChartData';
 })
 
 export class PieChartComponent implements OnInit {
-
+  // Données pour le graphique pie où chaque entrée représente un objet avec
+  // une propriété name (nom du pays) et une propriété value (somme des médailles)
   public pieChartData: ChartData[] = [];
 
-  view: [number, number] = [430, 400];
-  showLabels = true;
-  isDoughnut = false;
-  activeData: ChartData | null = null;
-  colorScheme: Color = {
+  public view: [number, number] = [430, 400];
+  public showLabels = true;
+  public isDoughnut = false;
+  public activeData: ChartData | null = null;
+  // Pour l'attribut [scheme] edmande un objet de type Color qui a une clé dont
+  // la valeur est de type ScaleType
+  public colorScheme: Color = {
     name: 'customScheme',
     selectable: true,
     group: ScaleType.Ordinal,
@@ -41,6 +44,7 @@ export class PieChartComponent implements OnInit {
     });
   }
 
+  //Méthode de redirection vers la page de détails du pays sélectionné
   onSelect(data: ChartData): void {
     this.activeData = data;
     this.router.navigate(['/details', data.name]);

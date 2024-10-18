@@ -13,20 +13,22 @@ import { ChartData } from 'src/app/core/models/ChartData';
 })
 
 export class LineChartComponent implements OnInit {
-
+  // Données pour le graphique en ligne où chaque entrée représente un objet avec
+  // une propriété name (année) et une propriété value (nombre de médailles)
   public lineChartData: { name: string; series: ChartData[] }[] = [];
 
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Date';
+  public animations: boolean = true;
+  public xAxis: boolean = true;
+  public yAxis: boolean = true;
+  public showXAxisLabel: boolean = true;
+  public xAxisLabel: string = 'Date';
 
   public countryName: string | null = null;
 
   constructor(private olympicService: OlympicService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    // Récupération du nom du pays à partir de l'URL
     this.countryName = this.route.snapshot.paramMap.get('country');
 
     if (this.countryName) {
