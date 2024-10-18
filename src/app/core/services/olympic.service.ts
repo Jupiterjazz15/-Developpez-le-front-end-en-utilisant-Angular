@@ -37,6 +37,16 @@ export class OlympicService {
     return this.olympics$.asObservable();
   }
 
+  countOlympics(): number {
+    const olympics = this.getOlympicsValue();
+    return olympics ? olympics.length : 0;
+  }
+
+  countParticipations(): number {
+    const olympics = this.getOlympicsValue();
+    return (olympics && olympics[0].participations) ? olympics[0].participations.length : 0;
+  }
+
   getOlympicByName(name: string): Olympic | undefined {
     const olympics = this.getOlympicsValue();
 
@@ -51,16 +61,6 @@ export class OlympicService {
     }
 
     return foundOlympic;
-  }
-
-  countOlympics(): number {
-    const olympics = this.getOlympicsValue();
-    return olympics ? olympics.length : 0;
-  }
-
-  countParticipations(): number {
-    const olympics = this.getOlympicsValue();
-    return (olympics && olympics[0].participations) ? olympics[0].participations.length : 0;
   }
 
   getTotalMedals(olympic: Olympic): number {
